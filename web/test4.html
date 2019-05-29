@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>可见的元素</h3>
+    <h3>隐藏的元素</h3>
+    <a href="entest1.html" style="display: none">a1</a>
+    <a href="abcd.htm" style="display: none">a2</a>
+    <a href="entabc.htm">a3</a>
+    <a href="txtd.html">a4</a>
+</body>
+<script type="application/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="application/javascript">
+    $(function () {
+        //测试开头
+        $("h3").eq(0).click(function () {
+           var list= $("a:visible");
+           for(var i=0;i<list.length;i++){
+               var  s=$(list[i]).html();
+               alert(s);
+           }
+        });
+        //测试结尾
+        $("h3").eq(1).click(function () {
+            var list= $("a:hidden");
+            for(var i=0;i<list.length;i++){
+                var  s=$(list[i]).html();
+                alert(s);
+            }
+        });
+    });
+
+</script>
+</html>

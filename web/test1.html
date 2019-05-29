@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="username" name="username" value="张无忌">
+</body>
+<script type="application/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="application/javascript">
+    $(function () {
+        /*
+            1、JQuery对象转成JS对象  get(0)
+            2、JS对象转成Jquery对象  $(js对象)
+         */
+        var v_username=$("#username");//v_username是Jquery对象
+        var username=v_username.get(0);//将上面的对象转成Js对象
+        var vu=username.value;
+        alert(vu);
+
+        var uname=document.getElementById("username");//uname是js对象
+        var $_uname=$(uname);//$_uname是Jquery对象
+
+        var result=$_uname.val();
+        alert(result);
+
+    });
+
+</script>
+</html>

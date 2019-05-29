@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>获得后代元素</h2>
+    <h2>获得子代元素</h2>
+    <h2>获得紧挨着的第1个元素</h2>
+    <h2>获得紧挨着的所有同辈元素</h2>
+
+    <div id="menu">
+        <span>
+            <a href="#">图书</a>
+            <a href="#">教育</a>
+        </span>
+        <span>
+            <p>床前明月光</p>
+            <p>疑是地上霜</p>
+            <span>我是第孙子元素</span>
+        </span>
+        <h2>商品列表展示</h2>
+        <dl>
+            <dt>笔记本电脑</dt>
+            <dd>联想笔记本</dd>
+            <dd>华为笔记本</dd>
+            <dd>东芝笔记本</dd>
+        </dl>
+        <dl>
+            <dt>办公用品</dt>
+            <dd>参考书</dd>
+            <dd>铅笔</dd>
+            <dd>橡皮</dd>
+        </dl>
+    </div>
+    <span>同辈的span1</span>
+    <span>同辈的span2</span>
+
+</body>
+<script type="application/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="application/javascript">
+    $(function () {
+        /*
+            需求：获得menu下面的第1个span
+            获得所有的h2，然后取得第1个h2,click是点击事件。function()匿名函数
+         */
+        $("h2").eq(0).click(function () {
+            var s=$("#menu span").eq(2).html();
+            alert(s);
+        });
+        /**
+         * 测试 子元素  >
+         */
+        $("h2").eq(1).click(function () {
+            var s=$("#menu>span").eq(2).html();
+            alert(s);
+        });
+        /**
+         * 测试 紧挨着的第1个同辈元素  >
+         */
+        $("h2").eq(2).click(function () {
+            var s=$("#menu+span").html();
+            alert(s);
+        });
+        /**
+         * 测试 紧挨着的所有同辈元素  >
+         */
+        $("h2").eq(3).click(function () {
+            var s1=$("#menu~span:eq(0)").html();
+            alert(s1);
+            var s2=$("#menu~span:eq(1)").html();
+            alert(s2);
+        });
+    });
+
+</script>
+</html>

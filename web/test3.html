@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>测试开头</h3>
+    <h3>测试结尾</h3>
+    <h3>测试包含</h3>
+    <h3>测试等于</h3>
+    <a href="entest1.html">a1</a>
+    <a href="abcd.htm">a2</a>
+    <a href="entabc.htm">a3</a>
+    <a href="txtd.html">a4</a>
+</body>
+<script type="application/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="application/javascript">
+    $(function () {
+        //测试开头
+        $("h3").eq(0).click(function () {
+           var list= $("[href^='en']");
+           for(var i=0;i<list.length;i++){
+               var  s=$(list[i]).html();
+               alert(s);
+           }
+        });
+        //测试结尾
+        $("h3").eq(1).click(function () {
+            var list= $("[href$='l']");
+            for(var i=0;i<list.length;i++){
+                var  s=$(list[i]).html();
+                alert(s);
+            }
+        });
+        //测试包含
+        $("h3").eq(2).click(function () {
+            var list= $("[href*='abc']");
+            for(var i=0;i<list.length;i++){
+                var  s=$(list[i]).html();
+                alert(s);
+            }
+        });
+        //测试等于
+        $("h3").eq(3).click(function () {
+            var list= $("[type='application/javascript']");
+            for(var i=0;i<list.length;i++){
+                var  s=$(list[i]).html();
+                alert(s);
+            }
+        });
+    });
+
+</script>
+</html>
